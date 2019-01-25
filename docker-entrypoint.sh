@@ -1,7 +1,7 @@
 #!/bin/sh -x
 
 if [ ${OUTPUT} == "json" ]; then WMOUTPUT=--robot=json;
-elif [ ${OUTPUT} == "mqtt" ]; then WMOUTPUT=--shell="HOME=/wmbusmeters mosquitto_pub -h ${MQTT_HOSTNAME:-localhost} -p ${MQTT_HOSTPORT:-1883} -t ${MQTT_TOPIC:-meter} -m \"\$METER_JSON\""; fi
+elif [ ${OUTPUT} == "mqtt" ]; then WMOUTPUT=--shell="mosquitto_pub -h ${MQTT_HOSTNAME:-localhost} -p ${MQTT_HOSTPORT:-1883} -t ${MQTT_TOPIC:-meter} -m '$METER_JSON'"; fi
 if [ -z "${METERTYPE}" ]; then echo "METERTYPE not defined"; fi
 if [ -z "${METERID}" ]; then echo "METERID not defined"; fi
 if [ -z "${METERKEY}" ]; then echo "METERKEY not defined"; fi

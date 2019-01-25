@@ -1,6 +1,6 @@
 FROM alpine:latest AS build
 RUN apk add --no-cache alpine-sdk
-RUN git clone https://github.com/weetmuts/wmbusmeters.git
+RUN git clone https://github.com/tcastberg/wmbusmeters.git
 WORKDIR /wmbusmeters
 RUN make
 

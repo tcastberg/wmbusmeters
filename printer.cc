@@ -49,10 +49,9 @@ void Printer::printShells(Meter *meter, vector<string> &envs)
 {
     for (auto &s : shell_cmdlines_) {
         vector<string> args;
-        args.push_back("sh");
         args.push_back("-c");
         args.push_back(s);
-        invokeShell("/bin/busybox", args, envs);
+        invokeShell("/bin/sh", args, envs);
     }
 }
 

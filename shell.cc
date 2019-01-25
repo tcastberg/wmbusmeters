@@ -40,7 +40,6 @@ void invokeShell(string program, vector<string> args, vector<string> envs)
     }
     argv[i] = NULL;
 
-    envs->push_back("PATH='/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'");
     vector<const char*> env(envs.size()+1);
     env[0] = p;
     i = 0;

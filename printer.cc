@@ -48,6 +48,7 @@ void Printer::print(Meter *meter)
 void Printer::printShells(Meter *meter, vector<string> &envs)
 {
     for (auto &s : shell_cmdlines_) {
+        envs.push_back("PATH='/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'");
         vector<string> args;
         args.push_back("-c");
         args.push_back(s);
